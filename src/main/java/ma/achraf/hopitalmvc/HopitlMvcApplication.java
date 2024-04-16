@@ -25,7 +25,7 @@ public class HopitlMvcApplication  implements CommandLineRunner {
         patientRepository.save(new Patient(null,"Shryyfa",new Date(),false,23));
         patientRepository.save(new Patient(null,"Ayoub",new Date(),false,223));
         patientRepository.save(new Patient(null,"Mohammed",new Date(),false,233));
-        //cree patient premier solution
+        //cree patient premier solution sans parametre
 
         //Patient patient = new Patient();
       //  patient.setId(null);
@@ -33,7 +33,7 @@ public class HopitlMvcApplication  implements CommandLineRunner {
       //  patient.setDateNaissance(new Date());
         // patient.setScore(23);
 
-        // deuxieme solution
+        // deuxieme solution Avec des parametre
         //Patient patient2 = new Patient (null,"shryyfa",new Date(),false,123);
 
         // troisieme solution avec Builder

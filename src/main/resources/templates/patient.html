@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 <link rel="stylesheet"href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src ="/webjars/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 
 </head>
 <body>
@@ -12,6 +14,16 @@
     <div class ="card">
         <div class = "card-header">Liste Patients</div>
         <div class="card-body" >
+
+            <form method="get" th:action="@{index}">
+             <label>Keyword:</label>
+                <input class="form-control-sm" type="text" name="keyword" th:value="${keyword}">
+                <button type="submit" class="btn btn-info">
+                    <i class ="bi bi-search"></i>
+
+                </button>
+
+            </form>
 
             <table class="table">
                 <thead>
@@ -25,13 +37,27 @@
                 <tr th:each="p:${listPatients}">
                     <td th:text="${p.id}"></td>
                     <td th:text="${p.nom}"></td>
-                    <td th:text="${p.malade}"></td>
-                    <td th:text="${p.dateNaissance }"></td>
+                    <td th:text="${p.dateNaissance}"></td>
+                    <td th:text="${p.malade }"></td>
                     <td th:text="${p.score}"></td>
+                    <td>
+                        <a onclick="return confirm('Etes vous sure?')"
+                           th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}" class ="btn btn-danger">
+                            <i class ="bi bi-trash"></i>
+                        </a>
+                    </td>
 
                 </tr>
                 </thead>
             </table>
+            <ul class =" nav nav-pills">
+                <li th:each="value,item:${pages}">
+                    <a th:href="@{/index(page=${item.index},keyword=${keyword})}"
+                       th:class="${currentPage==item.index?'btn btn-info ms-1':'btn btn-outline-info ms-1' }"
+
+                       th:text="${1+item.index}"></a>
+                </li>
+            </ul>
 
 
         </div>
