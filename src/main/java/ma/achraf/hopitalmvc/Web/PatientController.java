@@ -80,4 +80,7 @@ public String save(Model model, @Valid Patient patient, BindingResult bindingRes
         return "editPatient";
 
     }
-}
+
+
+    }
+
