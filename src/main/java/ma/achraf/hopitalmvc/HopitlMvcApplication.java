@@ -26,15 +26,15 @@ public class HopitlMvcApplication  implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // patientRepository.save(new Patient(null,"Shryyfa",new Date(),false,23));
-        // patientRepository.save(new Patient(null,"Ayoub",new Date(),false,223));
-        //patientRepository.save(new Patient(null,"Mohammed",new Date(),false,233));
-        // patientRepository.save(new Patient(null,"Ali",new Date(),false,233));
-        //patientRepository.save(new Patient(null,"Youness",new Date(),false,233));
-        //patientRepository.save(new Patient(null,"Yassine",new Date(),false,233));
-        //patientRepository.save(new Patient(null,"Safae",new Date(),false,233));
-        //patientRepository.save(new Patient(null,"Oumaima",new Date(),false,233));
-        //cree patient premier solution sans parametre
+         patientRepository.save(new Patient(null,"Shryyfa",new Date(),false,23));
+         patientRepository.save(new Patient(null,"Ayoub",new Date(),false,223));
+        patientRepository.save(new Patient(null,"Mohammed",new Date(),false,233));
+         patientRepository.save(new Patient(null,"Ali",new Date(),false,233));
+        patientRepository.save(new Patient(null,"Youness",new Date(),false,233));
+        patientRepository.save(new Patient(null,"Yassine",new Date(),false,233));
+        patientRepository.save(new Patient(null,"Safae",new Date(),false,233));
+        patientRepository.save(new Patient(null,"Oumaima",new Date(),false,233));
+        cree patient premier solution sans parametre
 
         //Patient patient = new Patient();
       //  patient.setId(null);
